@@ -1,0 +1,232 @@
+
+DISPLAY
+
+
+propriedade display=responsavel por dizer como cada elemento sera mostrado na tela,todos os elementos tem a propriedade display
+
+vamos ver os tipos mais comuns do display: 1-display:none 2-display:block 3-display:inline 4-display:inline-block
+
+o paragrafo <p> eh do tipo block,o display:block; vai do inicio ao fim das bordas da pagina,o proximo conteudo pula pra linha debaixo
+
+a div tmb eh um display:block; pq elle preenche toda a largura da tela e o proximo elemento vai pra linha debaxio
+
+o span eh um display:inline; ele = ocupa apenas o espaco de onde esta escrito,espaco q as letras e espacos ocupam e nada mais,n quebra linha
+
+diferenca entre block e inline,no block pode por uma (modificar) largura e altura,no inline nao
+
+o paragrafo tem o distanciamento pq ele como padrao ja vem como uma margin
+
+nunca pode usar um elemento do tipo block dentro de um paragrafo,NUNCA!!!
+
+a div como block quebra o fluxo do paragrafo
+
+nao pode ter div dentro do paragrafo,nem paragrafo dentro de paragrafo,nunca!!!
+
+display:inline-block; ->mantem o comportamento do inline,mas permite mudar a altura e largura como no block
+
+display:none; -> faz com q um elemento pareca nunca ter entrado na tela
+
+para fazer com que o tamanho da imagem se mantenha e a img nao apareca,usamos o visibility: hidden;
+
+
+
+----------------------------------------------------------
+
+
+OVERFLOW
+
+
+overflow,quando voce tem um conteudo e um elemento,e esse conteudo eh maior q o elemento
+
+existe o overflow: visible; -> mostra o conteudo msm ultrapassando o container
+
+overflow: hidden; -> esconde o conteudo q ultrapassar o container 
+
+overflow: scroll; -> mostra duas barras para deslizar no eixo X e Y,e mostra o conteudo todo rolando para os correspontes eixos
+
+overflow: auto; -> vai por o scroll apenas onde eh necessario
+
+pode por em qual eixo voce quer o scroll,usando: overflow-x: scroll; ou overflow-y: scroll; 
+
+para nao por scroll em algum eixo,use: overflow-x: hidden; ou overflow-y: hidden;
+
+
+
+
+----------------------------------------------------------
+
+
+ALINHAMENTO HORIZONTAL
+
+
+vamos ver como posicionar um elemetno de forma horizontal
+
+uma das formas de fazer a centralizacao de um elemento eh usando a margim,usando -> margin: auto;
+
+mb poderia por alinhado a nossa direito,usando -> margin-left: auto; ->
+
+para mudar o posicionamento de uma img,primeiro modificamos o display para block e dps o margin
+
+o margin nao funciona se o display for inline ou inline-block
+
+se for do tipo inline-block,primeiro colocamos ela dentro de uma div com id,e no css do id da div usamos -> text-align: center; por exemplo
+
+
+
+----------------------------------------------------------
+
+
+
+POSITION - STATIC E RELATIVE
+
+
+
+----------------------------------------------------------
+
+
+POSITION - ABSOLUTE
+
+
+
+----------------------------------------------------------
+
+
+POSITION - FIXED
+
+
+
+----------------------------------------------------------
+
+
+POSITION - STICKY
+
+
+
+----------------------------------------------------------
+
+
+FLOAT
+
+
+
+vamos ver como posicionar elementor horizontalmete
+
+vamos ver diferencas entre o position: inline; e a do float 
+
+ o float eh uma propriedade do display que perimite q um elemento fica flutuando ao lado de outro elemento
+
+o float: left; -> faz com que o elemento flutue no lado de outro elemento,independente se for do tipo block
+
+o conteudo meio q abraca o float
+
+pode usar o float: left; e floar: right; 
+
+se voce nao quiser nada flutuando ao lado do seu elemento,usa: clear: left; ou clear:right;
+
+se voce nao quiser o elemento flutuando em nenhum dos lados,use: clear: both;
+
+para fazer a borda pegar todos os elementos que estao na div,use: overflow: auto;
+
+para criar menus use o <ul> e as opcoes em <li>
+
+ul{list-style:none} li{ float:right; padding: 10px; margin: 5px;}
+
+
+
+----------------------------------------------------------
+
+
+
+ALINHAMENTO VERTICAL
+
+
+
+vamos aprender a como fazer o posicionamento vertical
+
+para posicionar verticalemente centralizado,use o line-height: 200px; -> precisa saber qual e a altura para centralizar,nesse caso foi 200
+
+segunda forma: usar o position:absolute; e dps mudar o tipo da position do pai (nesse caso a div)para position:relative;,NAO PODE SER STATIC
+
+primeiro alinha do conteudo todo,use: top : 50%; ,dps para alinha 50% do proprio conteudo verticalmente,use o transform:translateY(-50%);
+
+para alinhar horizontalmente use o left:50%; ,e dps use o transform:translateX(-50%);
+
+se usar o transform 2x so vai valer o ultimo,para ultilziar o transform para os dois eixos(x,y),use: transform:translate(-50%, -50%);
+
+
+
+
+
+----------------------------------------------------------
+
+
+
+VIEWPORT
+
+
+vai em inspect e modifica a tela para celular
+
+para fazer um site responsivo,ultilizaremos uma meta tag para o navegador entender como ele deve processar o site
+
+para compatibilidade,use-> <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+
+
+----------------------------------------------------------
+
+
+
+RESPONSIVIDADE
+
+
+necessario o uso do viewport
+
+as unidades de medidas em % sao muito importantes para responsividade
+
+uma div com uma height qualquer ja fica responsivo,pq o div eh do tipo block a largura ocupa de ponta a ponta e a altura n ira mudar
+
+para ter a largura compativel com a % da tela,use: width: 80%; e height: ; -> do tamanho que quiser a altura
+
+para centralizar horizontalmente sempre compativel com a tela,use: margin:auto;
+
+segunda forma,agora com a div pai e um container dentro
+
+container com weigth e width 70% a div pai ,para centralizar no meio use: margin: auto;
+
+terceira forma
+
+uma forma melhor eh por no pai um padding e no container um width:100%; e height:100%; , o padding ja faria o distanciamento
+
+quarta maneira,usando o position e transform e sem usar o margin:auto;
+
+mas se quiser de fato que tenha 70% do pai usaria o position, position:relative; no pai e position:absolute; no container filho
+
+dps use no container(filho) um top:50%; e um left :50%; e um transform:translate(-50%, -50%);
+
+ai nao precisaria usar o margin:auto;
+
+para alinhar o texto,use: text-align: center;
+
+e um font-size: ; -> para tamanho e se quiser bastante usado a unidade vw por cor no q escrever um color: ;
+
+
+
+----------------------------------------------------------
+
+
+
+MEDIA QUERIES
+
+
+media queries:serve para voce dar um comportamento diferente para o css de acordo com o tamanho da tela do dispositivo que acessa sua pagina
+
+estrutura do media queries: @media screen and (max-width: 400px) { }
+
+pode ser max-width=>qual quer valor menor q o selecionado ira sofrer modificacoes . min-width=> qualquer valor maior sera modificado
+
+pode por diversos MediaQueries
+
+a ordem dos media queries importa , sempre os valores de tela tem q ser ajustado para nao haver erros
+
+
